@@ -1,5 +1,4 @@
 import java.awt.Color;
-import java.awt.event.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -7,7 +6,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.lang.String;
-import java.util.*;
 public class Calculator implements ActionListener{
     String b="";
     int rs=0;
@@ -89,15 +87,12 @@ public class Calculator implements ActionListener{
 		b0.addActionListener(this);
 		be.addActionListener(this);
 		bc.addActionListener(this);
-
         displayLabel.setOpaque(true);
         jf.add(displayLabel);
         jf.setVisible(true);
     }
     public static void main(String arg[]) {
-        new Calculator();
-
-    }
+        new Calculator();}
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==b0){
@@ -145,25 +140,12 @@ public class Calculator implements ActionListener{
               int m = Integer.parseInt(temp);
               a[k]=(int)m;
               k=k+1;
-              
-            }
+              }
             else{
               b=b+str.charAt(i);
-              
-            }
-          rs=a[0];
-          
-          }
-
-          for(int s=0;s<k;s++){   //check
-            System.out.println(a[s]);
-            
-          }System.out.println("exit1");
-          for(int s=0;s<b.length();s++){
-            System.out.println(b.charAt(s));
+              }rs=a[0];
           }
           for(int i=0;i<b.length();i++){
-            
             if(b.charAt(i)=='+'){
               rs=rs+a[i+1];
             }else if(b.charAt(i)=='-'){
@@ -174,8 +156,7 @@ public class Calculator implements ActionListener{
               rs=rs/a[i+1];
             }
           }
-          int mn=(int)rs;
-          displayLabel.setText("Result :"+mn);
+          displayLabel.setText("Result :"+rs);
         }
         else if(e.getSource()==bc){
           displayLabel.setText("");
